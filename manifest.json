@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "Simple HTML Styler",
+  "version": "0.0.0",
+  "description": "style webpages that use minimal HTML",
+  "content_scripts": [
+    {
+      "js": [
+        "onload.js"
+      ],
+      "matches": [
+        "*://*"
+      ]
+    }
+  ],
+  "background": {
+    "persistent": false
+  },
+  "options_page": "options.html"
+}
