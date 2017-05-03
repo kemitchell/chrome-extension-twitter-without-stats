@@ -13,7 +13,7 @@ function save () {
     status.textContent = 'Saved.'
     setTimeout(function () {
       status.textContent = ''
-    }, 750)
+    }, 1000)
   })
 }
 
