@@ -4,8 +4,8 @@ function hasSimpleTag () {
   var metaTags = document.getElementsByTagName('meta')
   return Array.prototype.slice.call(metaTags).some(function (metaTag) {
     return (
-      metaTag.getAttribute('property') === 'markup' &&
-      metaTag.getAttribute('value') === 'simple'
+      metaTag.getAttribute('name') === 'markup' &&
+      metaTag.getAttribute('content') === 'simple'
     )
   })
 }
@@ -14,7 +14,11 @@ function addStyles () {
   var newTag = document.createElement('style')
   newTag.type = 'text/css'
   chrome.storage.sync.get({styles: ''}, function (items) {
-    newTag.styleSheet.cssText = items.style
+    if (newTag.styleSheet) {
+      newTag.styleSheet.cssText = items.styles
+    } else {
+      newTag.appendChild(document.createTextNode(items.styles))
+    }
     document.body.appendChild(newTag)
   })
 }

@@ -2,19 +2,22 @@
   "manifest_version": 2,
   "name": "Simple HTML Styler",
   "version": "0.0.0",
-  "description": "style webpages that use minimal HTML",
+  "description": "style webpages that use simple HTML",
   "content_scripts": [
     {
+      "matches": [
+        "<all_urls>"
+      ],
       "js": [
         "onload.js"
       ],
-      "matches": [
-        "*://*"
-      ]
+      "all_frames": true
     }
   ],
-  "background": {
-    "persistent": false
-  },
+  "permissions": [
+    "tabs",
+    "storage",
+    "<all_urls>"
+  ],
   "options_page": "options.html"
 }
