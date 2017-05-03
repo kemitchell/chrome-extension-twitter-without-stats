@@ -1,8 +1,10 @@
 {
   "manifest_version": 2,
   "name": "Simple HTML Styler",
+  "short_name": "Simple HTML",
   "version": "0.0.0",
   "description": "style webpages that use simple HTML",
+  "author": "K.E. Mitchell",
   "content_scripts": [
     {
       "matches": [
