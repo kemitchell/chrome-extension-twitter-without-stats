@@ -1,14 +1,14 @@
 {
   "manifest_version": 2,
-  "name": "Simple HTML Styler",
-  "short_name": "Simple HTML",
+  "name": "Twitter Without Stats",
+  "short_name": "Twitter Without Stats",
   "version": "0.0.0",
-  "description": "style webpages that use simple HTML",
+  "description": "remove stats counts from Twitter.com",
   "author": "K.E. Mitchell",
   "content_scripts": [
     {
       "matches": [
-        "<all_urls>"
+        "*://twitter.com/*"
       ],
       "js": [
         "onload.js"
@@ -18,9 +18,6 @@
     }
   ],
   "permissions": [
-    "tabs",
-    "storage",
-    "<all_urls>"
-  ],
-  "options_page": "options.html"
+    "tabs"
+  ]
 }
