@@ -1,9 +1,0 @@
-{
-  "private": true,
-  "scripts": {
-    "lint": "standard"
-  },
-  "devDependencies": {
-    "standard": "^10.0.2"
-  }
-}
